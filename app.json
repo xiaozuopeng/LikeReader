@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "pages/bookstack/bookstack"
+  ],
+  "window": {
+    "defaultTitle": "My App"
+  }
+}
