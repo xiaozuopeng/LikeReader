@@ -1,0 +1,24 @@
+.am-vtabs-bar {
+  width: 60px;
+}
+
+.am-vtabs-bar-tab {
+  width: 60px;
+}
+
+.am-grid-2 .am-grid-icon {
+  width: 28px;
+  height: 50px;
+}
+
+.am-grid-2 .am-grid-text {
+  font-size: 14px;
+}
+
+.am-grid-desc {
+  font-size: 10px;
+}
+
+.am-grid-3 .am-grid-border {
+  border-bottom: 0.5px solid rgb(238, 238, 238);
+}

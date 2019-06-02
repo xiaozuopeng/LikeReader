@@ -1,3 +1,14 @@
-<view>
-  New Page
-</view>
+<scroll-view>
+  <view hidden="{{isHidden}}">
+    <block a:for="{{tabs}}">
+      <view style="margin-top: 10px;margin-bottom: 10px">
+        <view style="display: flex;  justify-content: space-around;">
+          <view style="background: #e7e7e7; flex:1; height:0.5px;margin: 10px"></view>
+          <text>{{item.title}}</text>
+          <view style="background: #e7e7e7; flex:1; height:0.5px;margin: 10px"></view>
+        </view>
+      </view>
+      <grid onGridItemClick="onItemClick" columnNum="{{3}}" list="{{item.list}}" hasLine="{{true}}" />
+    </block>
+  </view>
+</scroll-view>

@@ -6,10 +6,12 @@
     "pages/classify/classify"
   ],
   "window": {
-    "defaultTitle": "爱读小说阅读器"
+    "defaultTitle": "爱读小说阅读器",
+    "titleBarColor": "#1A8CFF",
+    "backgroundColor":"#f3f3f3"
   },
   "tabBar": {
-    "textColor": "#dddddd",
+    "textColor": "#666666",
     "selectedColor": "#1A8CFF",
     "backgroundColor": "#ffffff",
     "items": [
