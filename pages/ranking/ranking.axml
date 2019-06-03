@@ -1,3 +1,15 @@
-<view>
-  New Page
+<view hidden="{{isHidden}}">
+  <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange" activeTab="{{activeTab}}">
+    <block a:for="{{tabs}}" a:for-item="tab">
+      <tab-content key="{{index}}">
+        <list>
+          <block a:for="{{tab.list}}">
+            <list-item thumb="{{item.cover}}" arrow="{{true}}" align="{{middle}}" index="{{index}}" onClick="onItemClick" data-value="{{item}}">
+      {{item.title}}
+            </list-item>
+          </block>
+        </list>
+      </tab-content>
+    </block>
+  </tabs>
 </view>

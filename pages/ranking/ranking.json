@@ -1,1 +1,8 @@
-{}
+{
+  "usingComponents": {
+    "tabs": "mini-antui/es/tabs/index",
+    "tab-content": "mini-antui/es/tabs/tab-content/index",
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index"
+  }
+}

@@ -72,7 +72,7 @@ Page({
             value.list = _press;
           }
         });
-        console.log(_tabs);
+        // console.log(_tabs);
         this.setData({
           isHidden: false,
           tabs: _tabs
