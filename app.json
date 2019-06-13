@@ -3,12 +3,14 @@
     "pages/bookstack/bookstack",
     "pages/search/search",
     "pages/ranking/ranking",
-    "pages/classify/classify"
+    "pages/classify/classify",
+    "pages/ranking/rankingtwo/rankingtwo",
+    "pages/bookdetail/bookdetail"
   ],
   "window": {
     "defaultTitle": "爱读小说阅读器",
     "titleBarColor": "#1A8CFF",
-    "backgroundColor":"#f3f3f3"
+    "backgroundColor": "#f3f3f3"
   },
   "tabBar": {
     "textColor": "#666666",
@@ -18,25 +20,25 @@
       {
         "pagePath": "pages/bookstack/bookstack",
         "name": "书架",
-        "icon":"assets/tab_bookstack_normal.png",
+        "icon": "assets/tab_bookstack_normal.png",
         "activeIcon": "assets/tab_bookstack_selected.png"
       },
       {
         "pagePath": "pages/search/search",
         "name": "搜索",
-        "icon":"assets/tab_search_normal.png",
+        "icon": "assets/tab_search_normal.png",
         "activeIcon": "assets/tab_search_selected.png"
       },
       {
         "pagePath": "pages/ranking/ranking",
         "name": "排行",
-        "icon":"assets/tab_ranking_normal.png",
+        "icon": "assets/tab_ranking_normal.png",
         "activeIcon": "assets/tab_ranking_selected.png"
       },
       {
         "pagePath": "pages/classify/classify",
         "name": "分类",
-        "icon":"assets/tab_classify_normal.png",
+        "icon": "assets/tab_classify_normal.png",
         "activeIcon": "assets/tab_classify_selected.png"
       }
     ]

@@ -8,8 +8,7 @@ Page({
     tabs: [
       { title: '男频', list: [] },
       { title: '女频', list: [] },
-      { title: '出版', list: [] },
-      { title: '漫画', list: [] }
+      { title: '出版', list: [] }
     ]
   },
   onLoad() {
@@ -29,7 +28,9 @@ Page({
 
   onItemClick(ev) {
     let _detail = ev.target.dataset.value;
-    console.log(_detail);
+    my.navigateTo({
+      url: 'rankingtwo/rankingtwo?id=' + _detail._id
+    })
   },
 
   /**
@@ -57,11 +58,6 @@ Page({
               value.cover = myUtils.getImgPath(value.cover);
             })
             value.list = res.data.epub;
-          } else if (value.title == "漫画") {
-            res.data.picture.forEach(function(value) {
-              value.cover = myUtils.getImgPath(value.cover);
-            })
-            value.list = res.data.picture;
           }
         });
         // console.log(res.data)

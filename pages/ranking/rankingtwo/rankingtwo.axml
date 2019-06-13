@@ -1,0 +1,25 @@
+<view class="ranking-list" a:for="{{rankingList}}" a:for-item="rankingItem" a:for-index="index" hidden='{{isHidden}}'>
+  <navigator url="../../bookdetail/bookdetail?bookId={{rankingItem._id}}">
+    <view class="ranking-item">
+      <view class='left-content'>
+        <image class='cover-img' src='{{rankingItem.cover}}' mode='scaleToFill' lazy-load="{{true}}"></image>
+      </view>
+      <view class='right-content'>
+        <view>
+          <text class='title'>{{index+1}}.{{rankingItem.title}}</text>
+        </view>
+        <view>
+          <text class='desc'>{{rankingItem.shortIntro}}</text>
+        </view>
+        <view class='content-footer'>
+          <view class="author-content">
+            <image class="author-icon" src="../../../assets/author.png"></image>
+            <text class='author'>{{rankingItem.author}}</text>
+          </view>
+          <text class='book-type'>{{rankingItem.minorCate}}</text>
+          <text class='like'>{{rankingItem.latelyFollower}}万人气</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>
