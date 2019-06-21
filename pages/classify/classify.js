@@ -13,7 +13,10 @@ Page({
 
   onItemClick(ev) {
     let _item = ev.detail.index.item;
-    console.log(_item);
+    // console.log(_item);
+    my.navigateTo({
+      url: 'classifylist?gender=' + _item.gender + '&major=' + _item.name
+    })
   },
 
 
@@ -44,6 +47,7 @@ Page({
               value.icon = value.bookCover[0];
               value.text = value.name;
               value.desc = value.bookCount + '本';
+              value.gender = 'male';
             });
             value.list = _male
           } else if (value.anchor == 'female') {
@@ -56,6 +60,7 @@ Page({
               value.icon = value.bookCover[0];
               value.text = value.name;
               value.desc = value.bookCount + '本';
+              value.gender = 'female';
             });
             value.list = _female;
           } else if (value.anchor == 'press') {
@@ -68,6 +73,7 @@ Page({
               value.icon = value.bookCover[0];
               value.text = value.name;
               value.desc = value.bookCount + '本';
+              value.gender = 'press';
             });
             value.list = _press;
           }

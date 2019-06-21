@@ -5,7 +5,8 @@
     "pages/ranking/ranking",
     "pages/classify/classify",
     "pages/ranking/rankingtwo",
-    "pages/bookdetail/bookdetail"
+    "pages/bookdetail/bookdetail",
+    "pages/classify/classifylist"
   ],
   "window": {
     "defaultTitle": "爱读小说阅读器",

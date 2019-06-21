@@ -1,0 +1,29 @@
+<scroll-view scroll-y="true" onScrollToLower='scrollToBottom' style='height:{{winHeight}}px'>
+  <view class="classify-list" a:for="{{classifyList}}" a:for-item="classifyItem" hidden='{{isHidden}}'>
+    <navigator url="../bookdetail/bookdetail?bookId={{classifyItem._id}}">
+      <view class="classify-item">
+        <view class='left-content'>
+          <image class='cover-img' src='{{classifyItem.cover}}' mode='scaleToFill' lazy-load="{{true}}"></image>
+        </view>
+        <view class='right-content'>
+          <view>
+            <text class='title'>{{index+1}}.{{classifyItem.title}}</text>
+          </view>
+          <view>
+            <text class='desc'>{{classifyItem.shortIntro}}</text>
+          </view>
+          <view class='content-footer'>
+            <view class="footer-item">
+              <image class="author-icon" src="../../../assets/author.png"></image>
+              <text class='author'>{{classifyItem.author}}</text>
+            </view>
+            <view class="footer-item">
+              <text class='book-type'>{{classifyItem.minorCate}}</text>
+              <text class='like'>{{classifyItem.latelyFollower}}万人气</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</scroll-view>
