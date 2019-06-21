@@ -29,7 +29,7 @@ Page({
   onItemClick(ev) {
     let _detail = ev.target.dataset.value;
     my.navigateTo({
-      url: 'rankingtwo/rankingtwo?id=' + _detail._id
+      url: 'rankingtwo?id=' + _detail._id
     })
   },
 

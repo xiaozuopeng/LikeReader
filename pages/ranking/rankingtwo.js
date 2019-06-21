@@ -1,5 +1,5 @@
-import MyHttp from '../../../utils/request/xrequest.js'
-import myUtils from '../../../utils/util.js'
+import MyHttp from '../../utils/request/xrequest.js'
+import myUtils from '../../utils/util.js'
 
 Page({
   data: {
@@ -12,6 +12,10 @@ Page({
     this.setData({
       rankingId: _id
     });
+    this.getRankingData();
+  },
+
+  onPullDownRefresh() {
     this.getRankingData();
   },
 
