@@ -32,9 +32,9 @@ function isObject(obj) {
 
 function sendRequest(url, method, data, headers) {
   let promise = new Promise(function(resolve, reject) {
-    my.showLoading({
-      content: '加载中...'
-    });
+    // my.showLoading({
+    //   content: '加载中...'
+    // });
     my.request({
       url: url,
       data: data,
@@ -44,7 +44,7 @@ function sendRequest(url, method, data, headers) {
       fail: reject,
       complete: function() {
         // complete
-        my.hideLoading();; //完成停止加载
+        // my.hideLoading();; //完成停止加载
         my.stopPullDownRefresh();//停止下拉刷新
       }
     })

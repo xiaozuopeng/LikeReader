@@ -9,7 +9,8 @@ Page({
     gender: '',
     major: '',
     classifyList: [],
-    isEmpty: true
+    isEmpty: true,
+    show: false, // 是否显示加载动画
   },
   onLoad(query) {
     my.getSystemInfo({
@@ -35,6 +36,9 @@ Page({
     let _major = this.data.major;
     let _classifyList = this.data.classifyList;
     let _isEmpty = this.data.isEmpty;
+    this.setData({
+      show: true
+    });
 
     let parmas = {
       gender: _gender,
@@ -67,6 +71,9 @@ Page({
   },
 
   scrollToBottom: function() {
+    this.setData({
+      startIndex: 0
+    });
     this.getClassifyList();
   },
 });
