@@ -1,3 +1,28 @@
-<view>
-  New Page
+<view class="page-body" hidden='{{isHidden}}'>
+  <view class="book-list" a:for="{{bookList}}" a:for-item="bookItem">
+    <view class="book-item" onTap="onClickItem" onLongTap='onLongTap' id='{{bookItem._id}}'>
+      <image class='cover-img' src='{{bookItem.cover}}' mode='scaleToFill'></image>
+      <view class='right-content'>
+        <view>
+          <text class='title'>{{bookItem.title}}</text>
+        </view>
+        <view>
+          <text class='desc'>{{bookItem.longIntro}}</text>
+        </view>
+        <view>
+          <text class='chapter'>{{bookItem.updated}}前更新：{{bookItem.lastChapter}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='add-item' onTap='clickAdd'>
+    <image src='../../../assets/icon_add.png' class='add-img'></image>
+    <text class='add-text'>添加你喜欢的小说</text>
+  </view>
+</view>
+<view style="height:{{winHeight}}px;display:{{isAddHidden?'none':'flex'}};justify-content:center;align-items:center;">
+  <view class='add-content' onTap='clickAdd'>
+    <image src='../../../assets/icon_add.png' class='add-content_img'></image>
+    <view class='add-content_text'>添加你喜欢的小说</view>
+  </view>
 </view>

@@ -18,7 +18,7 @@
               <text class='author'>{{classifyItem.author}}</text>
             </view>
             <view class="footer-item">
-              <text class='book-type'>{{classifyItem.minorCate}}</text>
+              <text class='book-type'>{{classifyItem.minorCate?classifyItem.minorCate:classifyItem.majorCate}}</text>
               <text class='like'>{{classifyItem.latelyFollower}}万人气</text>
             </view>
           </view>
