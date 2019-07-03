@@ -1,3 +1,51 @@
-<view>
-  New Page
+<view class='container page-body'>
+  <view style='padding: 10px;background: {{contentBackground}};' hidden='{{isHiddenContent}}' onTap="onBottomPopupShow">
+    <scroll-view scroll-y="true">
+      <view class='title' style='font-size:{{contentFontSize}}rpx'>{{chapterContent.title}}</view>
+      <view class='content' style='font-size:{{contentFontSize}}rpx'>
+        <text class='text-body' decode="{{true}}">{{chapterContent.body}}</text>
+      </view>
+      <view class='footer-btn'>
+        <button class='pre-btn' disabled='{{isPreDisable}}' catchTap='previousChapter'>上一章</button>
+        <button class='catalogue-btn' catchTap='catalogue'>目录</button>
+        <button class='next-btn' disabled='{{isNextDisable}}' catchTap='nextChapter'>下一章</button>
+      </view>
+    </scroll-view>
+  </view>
 </view>
+<!-- 下方操作栏 -->
+<popup show="{{showBottom}}" position="bottom" onClose="onBottomPopupClose" zIndex="{{150}}" mask="{{true}}">
+  <view class="action-box">
+    <view class='action-box_btn'>
+      <button class='pre-btn' onTap='fontAddition'>A+</button>
+      <view class='space-view'></view>
+      <button class='next-btn' onTap='fontSubtraction'>A-</button>
+    </view>
+    <view class='action-box_btn'>
+      <button class='pre-btn' onTap='standardColors'>标准色</button>
+      <view class='space-view'></view>
+      <button class='next-btn' onTap='protectiveEyeColor'>护眼色</button>
+    </view>
+    <view class='action-box_btn'>
+      <button class='pre-btn' disabled='{{isPreDisable}}' onTap='previousChapter'>上一章</button>
+      <button class='catalogue-btn' onTap='onCatalogueOpen'>目录</button>
+      <button class='next-btn' disabled='{{isNextDisable}}' onTap='nextChapter'>下一章</button>
+    </view>
+  </view>
+</popup>
+<!-- 章节列表 -->
+<!--<popup show="{{showLeft}}" position="left" onClose="onLeftPopupClose" zIndex="{{200}}" mask="{{true}}"> -->
+<view class='chapter-list' a:if="{{showLeft}}">
+  <view class='chapter-list_header'>
+    <text>目录（共{{chaptersData.chapters.length}}章）</text>
+  </view>
+  <scroll-view class="chapter-list_content" style='height:{{winHeight}}px' scroll-y="true" scroll-into-view="{{chapterIndex}}" trap-scroll="true">
+    <block a:for="{{chapters}}" a:for-item="chapterItem">
+      <view class="chapter-item" id='{{index}}' catchTap='clickChapterItem'>{{chapterItem.title}}</view>
+    </block>
+  </scroll-view>
+  <view class='chapter-list_footer'>
+    <button catchTap="onCatalogueClose">关闭</button>
+  </view>
+</view>
+<!--</popup> -->

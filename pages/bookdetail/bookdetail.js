@@ -64,6 +64,7 @@ Page({
         }
       }
       _books.splice(_bookIndex, 1);
+      myStore.remove(bookId + 'index');
       isSaved = false;
     } else {
       _books.unshift(bookDetail);
