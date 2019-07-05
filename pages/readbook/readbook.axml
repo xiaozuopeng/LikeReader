@@ -1,5 +1,5 @@
 <view class='container page-body'>
-  <view style='padding: 10px;background: {{contentBackground}};' hidden='{{isHiddenContent}}' onTap="onBottomPopupShow">
+  <view style='padding: 10px;background: {{contentBackground}};color:{{fontColor}}' hidden='{{isHiddenContent}}' onTap="onBottomPopupShow">
     <scroll-view scroll-y="true">
       <view class='title' style='font-size:{{contentFontSize}}rpx'>{{chapterContent.title}}</view>
       <view class='content' style='font-size:{{contentFontSize}}rpx'>
@@ -25,6 +25,8 @@
       <button class='pre-btn' onTap='standardColors'>标准色</button>
       <view class='space-view'></view>
       <button class='next-btn' onTap='protectiveEyeColor'>护眼色</button>
+      <view class='space-view'></view>
+      <button class='next-btn' onTap='nightMode'>夜间模式</button>
     </view>
     <view class='action-box_btn'>
       <button class='pre-btn' disabled='{{isPreDisable}}' onTap='previousChapter'>上一章</button>

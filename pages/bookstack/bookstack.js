@@ -26,7 +26,7 @@ Page({
     let title = e.currentTarget.dataset.title;
     let bookId = e.currentTarget.id;
     my.navigateTo({
-      url: '../../pages/readbook/readbook?bookId=' + bookId + "&title=" + title,
+      url: '../../pages/readbook/readbook?bookId=' + bookId + "&title=" + title
     })
   },
 

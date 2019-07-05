@@ -17,7 +17,8 @@ Page({
     bookId: "",
     chaptersData: null,
     chapters: null,
-    chapterContent: ""
+    chapterContent: "",
+    fontColor: '#333'
   },
   onLoad(query) {
     my.getSystemInfo({
@@ -28,7 +29,8 @@ Page({
       }
     });
     let fontSize = myStore.get('font-size') || 36;
-    let fontColor = myStore.get('font-color') || 36;
+    let fontColor = myStore.get('font-color') || this.data.fontColor;
+    let contentBackground = myStore.get('contentBackground') || this.data.contentBackground;
     let bookId = query.bookId;
     my.setNavigationBar({
       title: query.title
@@ -36,7 +38,8 @@ Page({
     let _chapterIndex = myStore.get(bookId + 'index') || 0;
     this.setData({
       bookId: bookId,
-      contentBackground: fontColor,
+      fontColor: fontColor,
+      contentBackground: contentBackground,
       contentFontSize: fontSize,
       chapterIndex: _chapterIndex,
       isPreDisable: _chapterIndex > 0 ? false : true
@@ -135,17 +138,37 @@ Page({
 
   //标准色
   standardColors: function() {
-    myStore.set('font-color', '#ffffff')
+    myStore.set('font-color', '#333')
+    myStore.set('contentBackground', '#ffffff')
     this.setData({
-      contentBackground: '#ffffff'
+      showBottom: false,
+      contentBackground: '#ffffff',
+      fontColor: '#333'
     })
   },
 
   //护眼色
   protectiveEyeColor: function() {
-    myStore.set('font-color', '#c7edcc')
+    myStore.set('font-color', '#333')
+    myStore.set('contentBackground', '#c7edcc')
     this.setData({
-      contentBackground: '#c7edcc'
+      showBottom: false,
+      contentBackground: '#c7edcc',
+      fontColor: '#333'
+    })
+  },
+
+  //夜间模式
+  nightMode: function() {
+    // myStore.set('font-color', '#ffffff')
+    // myStore.set('contentBackground', '#333')
+    my.setNavigationBar({
+      backgroundColor: '#333'
+    });
+    this.setData({
+      showBottom: false,
+      contentBackground: '#333',
+      fontColor: '#999'
     })
   },
 
@@ -155,6 +178,7 @@ Page({
     let _chapterIndex = this.data.chapterIndex;
     myStore.set(this.data.bookId + 'index', _chapterIndex - 1)
     this.setData({
+      showBottom: false,
       chapterIndex: _chapterIndex - 1,
       isPreDisable: _chapterIndex - 1 > 0 ? false : true,
       isNextDisable: _chapterIndex - 1 < chapters.length - 1 ? false : true
@@ -184,6 +208,7 @@ Page({
     let _chapterIndex = this.data.chapterIndex;
     myStore.set(this.data.bookId + 'index', _chapterIndex + 1)
     this.setData({
+      showBottom: false,
       chapterIndex: _chapterIndex + 1,
       isPreDisable: _chapterIndex + 1 > 0 ? false : true,
       isNextDisable: _chapterIndex + 1 < chapters.length - 1 ? false : true

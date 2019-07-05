@@ -9,6 +9,7 @@ Page({
     isBookSaved: false,
     buttonText: '加追更',
     bookId: '',
+    title: '',
     bookDetail: null,
     commentList: null,
     recommendList: null
@@ -84,8 +85,10 @@ Page({
    */
   readBook: function() {
     let bookId = this.data.bookId
+    let title = this.data.title
+    console.log(this.data);
     my.navigateTo({
-      url: '../readbook/readbook?bookId=' + bookId
+      url: '../readbook/readbook?bookId=' + bookId + "&title=" + title
     })
   },
 
@@ -105,6 +108,7 @@ Page({
         console.log(_data)
         this.getCommentList(_data._id);
         this.setData({
+          title: _data.title,
           bookDetail: _data,
           isHidden: false
         });

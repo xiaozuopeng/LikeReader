@@ -22,7 +22,7 @@ Page({
     });
     let gender = query.gender;
     let major = query.major;
-    
+
     my.setNavigationBar({
       title: major
     });
@@ -31,6 +31,10 @@ Page({
       major: major
     });
     this.getClassifyList();
+  },
+
+  bookDetail: function(e) {
+    console.log(e);
   },
 
   //获取分类列表
