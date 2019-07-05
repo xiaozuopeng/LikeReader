@@ -22,6 +22,10 @@ Page({
     });
     let gender = query.gender;
     let major = query.major;
+    
+    my.setNavigationBar({
+      title: major
+    });
     this.setData({
       gender: gender,
       major: major

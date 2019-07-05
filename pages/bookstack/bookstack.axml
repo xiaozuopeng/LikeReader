@@ -1,6 +1,6 @@
 <view class="page-body" hidden='{{isHidden}}'>
   <view class="book-list" a:for="{{bookList}}" a:for-item="bookItem">
-    <view class="book-item" onTap="onClickItem" onLongTap='onLongTap' id='{{bookItem._id}}'>
+    <view class="book-item" onTap="onClickItem" onLongTap='onLongTap' id='{{bookItem._id}}' data-title='{{bookItem.title}}'>
       <image class='cover-img' src='{{bookItem.cover}}' mode='scaleToFill'></image>
       <view class='right-content'>
         <view>

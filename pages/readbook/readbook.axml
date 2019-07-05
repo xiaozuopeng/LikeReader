@@ -34,8 +34,7 @@
   </view>
 </popup>
 <!-- 章节列表 -->
-<!--<popup show="{{showLeft}}" position="left" onClose="onLeftPopupClose" zIndex="{{200}}" mask="{{true}}"> -->
-<view class='chapter-list' a:if="{{showLeft}}">
+<view class='chapter-list' a:if="{{showCatalogue}}">
   <view class='chapter-list_header'>
     <text>目录（共{{chaptersData.chapters.length}}章）</text>
   </view>
@@ -48,4 +47,3 @@
     <button catchTap="onCatalogueClose">关闭</button>
   </view>
 </view>
-<!--</popup> -->

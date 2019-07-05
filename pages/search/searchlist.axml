@@ -1,0 +1,27 @@
+<view class="search-list" a:for="{{searchList}}" a:for-item="searchList" hidden='{{isHidden}}'>
+  <navigator url="../bookdetail/bookdetail?bookId={{searchList._id}}">
+    <view class="search-item">
+      <view class='left-content'>
+        <image class='cover-img' src='{{searchList.cover}}' mode='scaleToFill' lazy-load="{{true}}"></image>
+      </view>
+      <view class='right-content'>
+        <view>
+          <text class='title'>{{index+1}}.{{searchList.title}}</text>
+        </view>
+        <view>
+          <text class='desc'>{{searchList.shortIntro}}</text>
+        </view>
+        <view class='content-footer'>
+          <view class="footer-item">
+            <image class="author-icon" src="../../../assets/author.png"></image>
+            <text class='author'>{{searchList.author}}</text>
+          </view>
+          <view class="footer-item">
+            <text class='book-type'>{{searchList.cat}}</text>
+            <text class='like'>{{searchList.latelyFollower}}万人气</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>

@@ -23,9 +23,10 @@ Page({
   },
 
   onClickItem: function(e) {
+    let title = e.currentTarget.dataset.title;
     let bookId = e.currentTarget.id;
     my.navigateTo({
-      url: '../../pages/readbook/readbook?bookId=' + bookId,
+      url: '../../pages/readbook/readbook?bookId=' + bookId + "&title=" + title,
     })
   },
 

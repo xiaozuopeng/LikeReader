@@ -1,3 +1,39 @@
-<view>
-  New Page
+<view class='search-page'>
+  <!-- 搜索框 -->
+  <search-bar value="{{inputValue}}" placeholder="搜索" onClear="clearInput" onCancel="clearInput" onSubmit="searchSubmit" />
+  <scroll-view scroll-y="true" style='height:{{winHeight}}px'>
+    <!-- 热门搜索 -->
+    <view class="hot-search" style="display:{{hotKeys ? 'block':'none'}}">
+      <view class='hot-search-header'>
+        <text class="hot-search-title">大家都在搜</text>
+        <text style="display:block;font-size:26rpx;padding-right:4px;color:gray" onTap='refreshKeys'>刷新</text>
+        <image src='../../../assets/icon_refresh.png' class='img' bindtap='refreshKeys'></image>
+      </view>
+      <view class="hot-search-list">
+        <block a:for="{{hotKeys}}" a:for-item="hotKey">
+          <navigator url="../bookdetail/bookdetail?bookId={{hotKey.book}}">
+            <view class="hot-search-item" style='background-color:{{hotKey.background}}'>{{hotKey.word}}</view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+    <!-- 搜索历史 -->
+    <view class="hot-search" style="display:{{hotKeys ? 'block':'none'}};margin-top:20px;">
+      <view class='hot-search-header'>
+        <text class="hot-search-title">搜索历史</text>
+        <text style="display:block;font-size:26rpx;padding-right:4px;color:gray" onTap='deleteHistory'>清空</text>
+        <image src='../../../assets/icon_delete.png' class='img' onTap='deleteHistory'></image>
+      </view>
+      <view class="history-search-list" a:if="{{historyWords?true:false}}">
+        <block a:for="{{historyWords}}" a:for-item="historyWord">
+          <navigator url="../search/searchlist?keyWord={{historyWord}}">
+            <list-item thumb="../../../assets/icon_search_history.png" last="{{index === (items.length - 1)}}">
+        {{historyWord}}
+            </list-item>
+          </navigator>
+        </block>
+        <!--<block a:for="{{historyWords}}" a:for-item="historyWord"><navigator url="../search/searchlist?keyWord={{historyWord}}"><view class="history-search-item">{{historyWord}}</view></navigator></block> -->
+      </view>
+    </view>
+  </scroll-view>
 </view>

@@ -1,1 +1,7 @@
-{}
+{
+  "pullRefresh": false,
+  "usingComponents": {
+    "search-bar": "mini-antui/es/search-bar/index",
+    "list-item": "mini-antui/es/list/list-item/index"
+  }
+}

@@ -9,7 +9,7 @@ Page({
     contentFontSize: 36,
     contentBackground: '#c7edcc',
     showBottom: false,
-    showLeft: false,
+    showCatalogue: false,
     isPreDisable: true,
     isNextDisable: false,
     chapterIndex: 0,
@@ -30,6 +30,9 @@ Page({
     let fontSize = myStore.get('font-size') || 36;
     let fontColor = myStore.get('font-color') || 36;
     let bookId = query.bookId;
+    my.setNavigationBar({
+      title: query.title
+    });
     let _chapterIndex = myStore.get(bookId + 'index') || 0;
     this.setData({
       bookId: bookId,
@@ -164,14 +167,14 @@ Page({
   onCatalogueOpen: function() {
     this.setData({
       showBottom: false,
-      showLeft: true
+      showCatalogue: true
     });
   },
 
   //关闭目录
   onCatalogueClose: function() {
     this.setData({
-      showLeft: false
+      showCatalogue: false
     });
   },
 
@@ -195,7 +198,7 @@ Page({
     myStore.set(this.data.bookId + 'index', index);
     this.setData({
       chapterIndex: index,
-      showLeft: false
+      showCatalogue: false
     });
 
     this.getChapterDetail();
