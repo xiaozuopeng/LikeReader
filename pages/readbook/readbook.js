@@ -9,7 +9,7 @@ Page({
     contentFontSize: 36,
     contentBackground: '#c7edcc',
     showBottom: false,
-    showCatalogue: false,
+    catalogueHidden: true,
     isPreDisable: true,
     isNextDisable: false,
     chapterIndex: 0,
@@ -81,7 +81,7 @@ Page({
     let chapterIndex = this.data.chapterIndex;
     let chapters = this.data.chaptersData.chapters;
     let _link = encodeURIComponent(chapters[chapterIndex].link);
-    new MyHttp({}, 'POST', 'chapter/' + _link, config.GLOBAL_CHAPTER_DOMAIN).then((res) => {
+    new MyHttp({}, 'POST', 'chapter/' + _link, config.GLOBAL_CHAPTER_DOMAIN2).then((res) => {
       if (res.status == 200 && res.data != null) {
         let _data = res.data.chapter;
         _data.title = chapters[chapterIndex].title;
@@ -167,14 +167,14 @@ Page({
   onCatalogueOpen: function() {
     this.setData({
       showBottom: false,
-      showCatalogue: true
+      catalogueHidden: false
     });
   },
 
   //关闭目录
   onCatalogueClose: function() {
     this.setData({
-      showCatalogue: false
+      catalogueHidden: true
     });
   },
 

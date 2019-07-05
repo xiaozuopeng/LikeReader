@@ -7,7 +7,7 @@
       </view>
       <view class='footer-btn'>
         <button class='pre-btn' disabled='{{isPreDisable}}' catchTap='previousChapter'>上一章</button>
-        <button class='catalogue-btn' catchTap='catalogue'>目录</button>
+        <button class='catalogue-btn' catchTap='onCatalogueOpen'>目录</button>
         <button class='next-btn' disabled='{{isNextDisable}}' catchTap='nextChapter'>下一章</button>
       </view>
     </scroll-view>
@@ -34,7 +34,7 @@
   </view>
 </popup>
 <!-- 章节列表 -->
-<view class='chapter-list' a:if="{{showCatalogue}}">
+<view class='chapter-list' hidden='{{catalogueHidden}}'>
   <view class='chapter-list_header'>
     <text>目录（共{{chaptersData.chapters.length}}章）</text>
   </view>
